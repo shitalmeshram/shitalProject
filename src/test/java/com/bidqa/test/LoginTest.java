@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 //--
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 //--
@@ -34,7 +35,7 @@ public class LoginTest {
     public void afterClass() throws InterruptedException {
 
        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-       //driver.quit();
+       driver.quit();
     }
 
     @Test
@@ -60,15 +61,23 @@ public void subscribeVerification() {
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 
-    WebElement element= driver.findElement(By.id("category"));
-    Select se=new Select(element);
-    se.selectByVisibleText("Automation – Mobile");
+    WebElement element= driver.findElement(By.xpath(".//*[@id='category']"));
 
+    Actions action =new Actions(driver);
+    action.moveToElement(element).build().perform();
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    driver.findElement(By.xpath(".//*[@id='category']/option[3]")).click();
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-
-
+   // Select se=new Select(element);
+   // se.selectByVisibleText("Automation – Mobile");
 
 }
+  @Test(dependsOnMethods = {"subscribeVerification"})
+public void logOut(){
 
+        driver.findElement(By.xpath(".//*[@id='cssmenu']/ul/li[7]/a")).click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+}
 
 }
