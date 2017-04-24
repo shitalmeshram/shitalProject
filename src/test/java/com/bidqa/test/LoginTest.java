@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 //--
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 //--
 import org.openqa.selenium.support.ui.Select;
@@ -22,8 +23,10 @@ public class LoginTest {
 
     @BeforeClass
     public void beforeClass() {
-        System.setProperty("webdriver.gecko.driver","Drivers\\geckodriver.exe");
-        driver = new FirefoxDriver();
+       // System.setProperty("webdriver.gecko.driver","Drivers\\geckodriver.exe");
+       // driver = new FirefoxDriver();
+        System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver.exe");
+        driver = new ChromeDriver();
 
     }
 

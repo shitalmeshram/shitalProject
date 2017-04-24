@@ -26,7 +26,7 @@ public class AppTest
 {
     private WebDriver driver;
 
-    @BeforeClass
+   /* @BeforeClass
     public void beforeClass() {
         System.setProperty("webdriver.gecko.driver","D:\\TEMP-DOWNLOADS\\geckodriver-v0.16.0-win64\\geckodriver.exe");
         driver = new FirefoxDriver();
@@ -37,9 +37,9 @@ public class AppTest
     public void afterClass() throws InterruptedException {
         Thread.sleep(5000);
         driver.quit();
-    }
+    }*/
 
-    @Test
+  /*  @Test
     public void verifySearchButton() {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -52,5 +52,11 @@ public class AppTest
         String text = search_button.getAttribute("value");
 
         Assert.assertEquals(text, search_text, "Text not found!");
-    }
+    } */
+
+  @Test
+    public void runTest(){
+      LoginTest lt= new LoginTest();
+      lt.loginVerification();
+  }
 }
