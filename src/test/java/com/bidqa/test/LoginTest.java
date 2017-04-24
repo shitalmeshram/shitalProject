@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 //--
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 //--
 import org.testng.annotations.AfterClass;
@@ -15,9 +16,7 @@ import org.testng.annotations.BeforeClass;
 //--
 import org.testng.annotations.Test;
 
-/**
- * Created by hishailesh77 on 4/22/2017.
- */
+
 public class LoginTest {
     private WebDriver driver;
 
@@ -30,9 +29,9 @@ public class LoginTest {
 
     @AfterClass
     public void afterClass() throws InterruptedException {
-       // Thread.sleep(5000);
-       // driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-       // driver.quit();
+
+       driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+       //driver.quit();
     }
 
     @Test
@@ -52,4 +51,21 @@ public class LoginTest {
 
 
     }
+@Test(dependsOnMethods = {"loginVerification"})
+public void subscribeVerification() {
+
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+
+    WebElement element= driver.findElement(By.id("category"));
+    Select se=new Select(element);
+    se.selectByVisibleText("Automation – Mobile");
+
+
+
+
+
+}
+
+
 }
