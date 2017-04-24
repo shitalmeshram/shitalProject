@@ -23,15 +23,16 @@ public class LoginTest {
 
     @BeforeClass
     public void beforeClass() {
-        System.setProperty("webdriver.gecko.driver","D:\\TEMP-DOWNLOADS\\geckodriver-v0.16.0-win64\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver","Drivers\\geckodriver.exe");
         driver = new FirefoxDriver();
 
     }
 
     @AfterClass
     public void afterClass() throws InterruptedException {
-        Thread.sleep(5000);
-        //driver.quit();
+       // Thread.sleep(5000);
+       // driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+       // driver.quit();
     }
 
     @Test
