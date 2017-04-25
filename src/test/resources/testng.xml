@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SeleniumPageFactoryExample" parallel="false">
+    <test name="TestBidQA" preserve-order="true">
+
+        <classes>
+            <class name="com.bidqa.test.TestRunner">
+
+            </class>
+
+        </classes>
+    </test>
+
+</suite>
