@@ -1,4 +1,4 @@
-package com.bidqa.test;
+package com.bidqa.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,7 +9,7 @@ import org.openqa.selenium.support.How;
  */
 public class LoginTestPage {
     //Define Username textbox
-    @FindBy(how = How.XPATH, using = ".//*[@id='log']")
+    @FindBy(how = How.ID, using = "log")
     private WebElement txtUserName;
 
     //Define Password textbox

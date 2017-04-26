@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="suiteA-Chrome">
+    <test name="TestBidQA" preserve-order="true">
+        <parameter name="userName" value="mickey"/>
+        <parameter name="passWord" value="abcd"/>
+        <parameter name="enterText" value="Hello there! How are you doing?"/>
+        <parameter name="country" value="Bahamas"/>
+        <parameter name="timeZone" value="Accra"/>
+        <parameter name="textArea" value="Software Testing"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="driverName" value="webdriver.chrome.driver"/>
+        <parameter name="driverLocation" value="Drivers\\chromedriver.exe"/>
+        <classes>
+            <class name="com.bidqa.tests.TestRunner">
+
+            </class>
+
+        </classes>
+    </test>
+
+</suite>

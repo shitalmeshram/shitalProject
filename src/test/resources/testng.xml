@@ -1,13 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="SeleniumPageFactoryExample" parallel="false">
-    <test name="TestBidQA" preserve-order="true">
-
-        <classes>
-            <class name="com.bidqa.test.TestRunner">
-
-            </class>
-
-        </classes>
-    </test>
+<suite name="SeleniumPageFactoryExample">
+    <suite-files>
+       <suite-file path="suite-files/suiteA-Firefox.xml"/>
+        <suite-file path="suite-files/suiteA-Chrome.xml"/>
+        <!--<suite-file path="suite-files/suiteB-Firefox.xml"/>
+        <suite-file path="suite-files/suiteB-Chrome.xml"/> -->
+    </suite-files>
 
 </suite>

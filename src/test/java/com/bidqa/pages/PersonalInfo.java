@@ -1,8 +1,9 @@
-package com.bidqa.test;
-
+package com.bidqa.pages;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
@@ -48,9 +49,15 @@ public class PersonalInfo {
 
     //Save Click Method
     public void ClickSaveBtn(WebDriver driver) {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(btnSave);
-        actions.perform();
+        Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+        String browserName = cap.getBrowserName().toLowerCase();
+        System.out.println("THIS IS THE BROWSER "+ browserName);
+        if (browserName.equalsIgnoreCase("chrome")) {
+            Actions actions = new Actions(driver);
+            actions.moveToElement(btnSave);
+            actions.perform();
+        }
         btnSave.click();
-    }
+
+}
 }
