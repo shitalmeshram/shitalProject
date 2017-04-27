@@ -2,7 +2,7 @@
 <suite name="SeleniumPageFactoryExample">
     <suite-files>
        <suite-file path="suite-files/suiteA-Firefox.xml"/>
-        <suite-file path="suite-files/suiteA-Chrome.xml"/>
+       <!-- <suite-file path="suite-files/suiteA-Chrome.xml"/>-->
         <!--<suite-file path="suite-files/suiteB-Firefox.xml"/>
         <suite-file path="suite-files/suiteB-Chrome.xml"/> -->
     </suite-files>

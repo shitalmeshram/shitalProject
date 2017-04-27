@@ -50,7 +50,7 @@ public class TestRunner {
     public void LoginTest(String userName,String passWord) throws InterruptedException {
         //Submit Login page
         LoginTestPage loginTestPage = PageFactory.initElements(driver,LoginTestPage.class);
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
        System.out.println("Assert Result:- ");
        // Assert.assertTrue(loginTestPage.getLoginTitle().contains("Login - BidQA"));
         loginTestPage.EnterUserName(userName);
@@ -61,7 +61,7 @@ public class TestRunner {
     @Test(priority = 3)
     public void MyAccountDisputeTest() throws InterruptedException {
         MyAccountPage myAccountPage = PageFactory.initElements(driver,MyAccountPage.class);
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         myAccountPage.ClickDisputeLink();
     }
 
@@ -69,7 +69,7 @@ public class TestRunner {
     @Parameters("enterText")
     public void DisputePageTest(String enterText) throws InterruptedException {
         DisputePage disputePage = PageFactory.initElements(driver, DisputePage.class);
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         disputePage.EnterTheText(enterText);
         disputePage.ClickCreateDisputeBtn();
     }
@@ -77,7 +77,7 @@ public class TestRunner {
         @Test(priority = 5)
         public void MyAccountPersonalInfoTest() throws InterruptedException {
             MyAccountPage myAccountPage = PageFactory.initElements(driver,MyAccountPage.class);
-            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             myAccountPage.ClickPersonalInfoLink();
         }
 
@@ -85,11 +85,11 @@ public class TestRunner {
 @Parameters({"country","timeZone","textArea"})
 public void PersonalInfoTest(String country,String timeZone,String textArea ) throws InterruptedException {
     PersonalInfo personalInfo = PageFactory.initElements(driver, PersonalInfo.class);
-    driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     personalInfo.SelectCountry(country);
     personalInfo.SelectTimezone(timeZone);
     personalInfo.EnterText(textArea);
-    driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     personalInfo.ClickSaveBtn(driver);
 }
 
